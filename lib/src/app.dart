@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:sus_jw/src/stands/stand.dart';
+import 'package:sus_jw/src/stands/stand_list_view.dart';
+import 'package:sus_jw/src/stands/stand_week_view.dart';
+import 'package:sus_jw/src/stands/stand_view.dart';
 
-import 'meetings/meeting_details_view.dart';
 import 'meetings/meetings_list_view.dart';
 import 'settings/settings_controller.dart';
 import 'settings/settings_view.dart';
@@ -69,11 +72,25 @@ class MyApp extends StatelessWidget {
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
                     return SettingsView(controller: settingsController);
-                  case SampleItemDetailsView.routeName:
-                    return const SampleItemDetailsView();
-                  case SampleItemListView.routeName:
+                  case StandWeekView.routeName:
+                    return StandWeekView();
+                  case MeetingsListView.routeName:
+                    return MeetingsListView();
+                  case StandListView.routeName:
+                    return StandListView();
+                  case StandView.routeName:
+                    // Extract arguments and pass to StandView
+                    final args = routeSettings.arguments as Stand?;
+                    if (args != null) {
+                      return StandView(stand: args);
+                    }
+                    // Handle case where arguments are missing or invalid
+                    return Scaffold(
+                      appBar: AppBar(title: Text('Error')),
+                      body: Center(child: Text('No valid Stand provided.')),
+                    );
                   default:
-                    return const SampleItemListView();
+                    return MeetingsListView();
                 }
               },
             );
