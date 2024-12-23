@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "susjw-20b2d"
+  },
+  "targets": {
+    "susjw-20b2d": {
+      "hosting": {
+        "dev": [
+          "susjw-20b2d"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

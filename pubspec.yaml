@@ -15,6 +15,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   telegram_web_app: ^0.3.1
+  firebase_core: ^3.9.0
+  js: ^0.6.5
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
