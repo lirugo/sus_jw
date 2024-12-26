@@ -1,5 +1,5 @@
-import 'package:sus_jw/src/model/time_range.dart';
-import 'package:sus_jw/src/model/user.dart';
+import 'package:sus_jw/src/models/time_range.dart';
+import 'package:sus_jw/src/models/user.dart';
 
 class StandAttendee {
   final TimeRange timeRange;

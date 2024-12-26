@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sus_jw/src/model/time_range.dart';
+import 'package:sus_jw/src/models/time_range.dart';
 
 class RangeConstants {
   RangeConstants._();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sus_jw/src/stands/stand_attendee.dart';
-import 'package:sus_jw/src/model/time_range.dart';
+import 'package:sus_jw/src/models/time_range.dart';
 import 'package:sus_jw/src/utils/utils.dart';
 
 class Stand {

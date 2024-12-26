@@ -1,32 +1,31 @@
-import 'dart:js' as js;
 import 'dart:convert';
+import 'dart:js' as js;
+
+import 'package:sus_jw/src/models/user.dart';
 
 class TelegramWebApp {
-  static final TelegramWebApp _instance = TelegramWebApp._internal();
-
-  late final dynamic telegram;
-
-  factory TelegramWebApp() {
-    _instance.telegram = js.context['Telegram']?['WebApp'];
-    return _instance;
+  static String getRawInitData() {
+    return js.context.callMethod('getTelegramInitData') as String;
   }
 
-  TelegramWebApp._internal();
+  static Map<String, dynamic> parseInitData(String initData) {
+    final Map<String, String> rawData = Uri.splitQueryString(initData);
 
-  String? getUser() {
-    if (telegram != null && telegram['initDataUnsafe'] != null) {
-      final user = telegram['initDataUnsafe']['user'];
-      if (user != null) {
-        return json.encode(user.toString());
+    final Map<String, dynamic> data = {};
+    rawData.forEach((key, value) {
+      if (key == 'user') {
+        data[key] = json.decode(Uri.decodeComponent(value));
+      } else {
+        data[key] = Uri.decodeComponent(value);
       }
-    }
-    return null;
+    });
+
+    return data;
   }
 
-  String? getUserId() {
-    if (telegram != null && telegram['initDataUnsafe']?['user'] != null) {
-      return telegram['initDataUnsafe']['user']['id'].toString();
-    }
-    return null;
+  static User getTelegramUser() {
+    final initData = getRawInitData();
+    final map = parseInitData(initData);
+    return User.fromInitData(map);
   }
 }

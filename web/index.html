@@ -39,6 +39,11 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script>
     Telegram.WebApp.expand();
+    const testUserInitData = 'userquery_id=AAHrZewTAAAAAOtl7BO8CE7g&user=%7B%22id%22%3A334259691%2C%22first_name%22%3A%22John%22%2C%22last_name%22%3A%22Doe%22%2C%22username%22%3A%22john_doe%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FRbmGsJujlAAwtANsEa5d4ouF084PAmy0dmwHMDUC05c.svg%22%7D&auth_date=1735210622&signature=If6uatZULbRB00p07tg5DI_SyQeMRE9vH7yPpqRPcznVcq2PnYxsCMVPRv5bRsK8G54pE2qsRpS0W0rSWx4iDg&hash=eadc1a85ea55d361f174273d6af31e9b06620d90c4885fda09fd7ca2a3cf73a9';
+
+    function getTelegramInitData() {
+      return Telegram.WebApp.initData || testUserInitData;
+    }
   </script>
 </body>
 

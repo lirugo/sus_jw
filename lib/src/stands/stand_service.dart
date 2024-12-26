@@ -1,4 +1,4 @@
-import 'package:sus_jw/src/model/user.dart';
+import 'package:sus_jw/src/models/user.dart';
 import 'package:sus_jw/src/stands/stand.dart';
 import 'package:sus_jw/src/stands/stand_attendee.dart';
 import 'package:sus_jw/src/utils/range_constants.dart';
