@@ -16,6 +16,9 @@ dependencies:
     sdk: flutter
   telegram_web_app: ^0.3.1
   firebase_core: ^3.9.0
+  firebase_auth: ^5.3.4
+  cloud_firestore: ^5.6.0
+  local_auth: ^2.3.0
   js: ^0.7.1
   flutter_dotenv: ^5.0.2
   table_calendar: ^3.1.3

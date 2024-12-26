@@ -10,7 +10,7 @@ class MeetingsListView extends StatefulWidget {
     this.items = const [Meeting(1, "Київ-Західний")],
   });
 
-  static const routeName = '/';
+  static const routeName = '/meetings';
 
   final List<Meeting> items;
 

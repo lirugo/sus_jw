@@ -26,13 +26,11 @@ class MyApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: const [
-            Locale('en', ''), // English, no country code
-          ],
+          supportedLocales: const [Locale('en', '')],
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
           theme: lightTheme,
-          darkTheme: darkTheme, // TODO use dark theme
+          darkTheme: darkTheme,
           themeMode: settingsController.themeMode,
           onGenerateRoute: (routeSettings) => AppRouter.onGenerateRoute(
             routeSettings,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sus_jw/src/sign_in/sign_in.dart';
 
 import 'meetings/meetings_list_view.dart';
 import 'settings/settings_controller.dart';
@@ -44,9 +45,11 @@ class AppRouter {
               return const MeetingsListView();
             case StandListView.routeName:
               return StandListView();
+            case SignInView.routeName:
+              return SignInView();
 
             default:
-              return const MeetingsListView();
+              return SignInView();
           }
         }
       },
